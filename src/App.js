@@ -7,7 +7,6 @@ import Footer from "./components/Footer.jsx"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Home from "./components/Home/Home"
 import Create from "./components/create/Create"
-import Read from "./components/read/Read"
 import Update from "./components/update/Update"
 import Delete from "./components/delete/Delete"
 
@@ -17,7 +16,19 @@ import JobDetails from './components/read/JobDetails.jsx'
 
 function App() {
 
-  const [jobs, addJob] = useState(data);
+  const [jobs, setJobs] = useState(data);
+  
+  function addJob(newJob){
+    setJobs(prevJobs => 
+      [...prevJobs, newJob] 
+    )
+  }
+
+  // function deleteJob(newJob){
+  //   prevJobs.filter(
+
+  //   )
+  // }
 
   return (
     <Router>
@@ -26,15 +37,22 @@ function App() {
 
 
         <Switch>
-          <Route path="/" exact component={Home}/>
+          <Route path="/" exact component={()=> <Home
+            data={jobs}
+          />}/>
 
-          <Route path="/create" component={Create} />
+          <Route path="/create" component={() => <Create
+            onAdd={addJob}
+          />} />
 
-          <Route path="/read/:id" component={JobDetails} />
+          <Route path="/read/:_id" component={(matchProps) => <JobDetails
+            {...matchProps}
+            data={jobs}
+          />} />
 
-          <Route path="/update" component={Update} />
+          <Route path="/update" component={() => <Update />} />
 
-          <Route path="/delete" component={Delete} />
+          <Route path="/delete" component={() => <Delete/>} />
 
         </Switch>
 

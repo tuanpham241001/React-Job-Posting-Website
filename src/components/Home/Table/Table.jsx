@@ -1,8 +1,7 @@
 import React from 'react'
-import data from "../../../data/data"
 import TableRow from './TableRow';
 
-function Table(){
+function Table(props){
     return (
         <table>
             <thead>
@@ -15,7 +14,7 @@ function Table(){
 
             <tbody>
                 {
-                    data.map(items =>{
+                    props.data.map(items =>{
                         return (
                             <TableRow
                                 key = {items._id}

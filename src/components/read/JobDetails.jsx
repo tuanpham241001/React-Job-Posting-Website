@@ -1,26 +1,24 @@
 import React from "react"
-import data from "../../data/data"
 
-function JobDetails({match}){
-    const [props] = data.filter(function(dataItem){
-        return dataItem._id === match.params.id
+function JobDetails(props){
+    console.log(props)
+    const [jobItems] = props.data.filter(function(dataItem){
+        return dataItem._id === props.match.params._id
     })
     
-    console.log(props)
-
     return (
         <div>
-            <h1> {props.title} </h1>
-            <h2>{props.city}</h2>
-            <h3>{props.employer}</h3>
+            <h1> {jobItems.title} </h1>
+            <h2>{jobItems.city}</h2>
+            <h3>{jobItems.employer}</h3>
             <h2> Requirements </h2>
             <ul>
-                {props.requirements.map(requirement => <li>{requirement}</li>)}
+                {jobItems.requirements.map(requirement => <li>{requirement}</li>)}
             </ul>
 
             <h2> Tasks </h2>
             <ul>
-                {props.tasks.map(task => <li>{task}</li>)}
+                {jobItems.tasks.map(task => <li>{task}</li>)}
             </ul>
         </div>
     )
