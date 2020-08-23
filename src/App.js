@@ -24,11 +24,14 @@ function App() {
     )
   }
 
-  // function deleteJob(newJob){
-  //   prevJobs.filter(
-
-  //   )
-  // }
+  function deleteJob(deleteID){
+    setJobs(prevJobs => {
+      return prevJobs.filter(jobsItem => {
+        return jobsItem._id !== deleteID}
+        )
+      }
+    )
+  }
 
   return (
     <Router>
@@ -52,7 +55,9 @@ function App() {
 
           <Route path="/update" component={() => <Update />} />
 
-          <Route path="/delete" component={() => <Delete/>} />
+          <Route path="/delete" component={() => <Delete
+            onDelete={deleteJob}
+          />} />
 
         </Switch>
 
