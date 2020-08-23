@@ -1,3 +1,36 @@
+.footer{
+  background-color: #61dafb;
+}
+ 
+.header {
+  background-color: #61dafb;
+  display: flex;
+  align-items: center;
+}
+
+.header * {
+  display: inline;
+}
+
+.header li {
+  margin: 20px;
+}
+
+body{
+  margin: 0;
+  font-family:  'Merriweather', serif;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+form input{
+  display: block;
+}
+
+
 .App {
   text-align: center;
 }

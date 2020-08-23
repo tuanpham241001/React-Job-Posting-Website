@@ -18,6 +18,7 @@ function Delete(props){
         <div>
             <h1> Delete </h1>
             <form>
+            <label>ID</label>
             <input onChange={handleChange} name="_id" value={deleteID} placeholder="Id"/>
             <Link to="/">
                 <button type="submit" onClick={deleteJob} >Submit</button>

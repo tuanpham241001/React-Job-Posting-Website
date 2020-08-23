@@ -5,7 +5,7 @@ import Header from "./components/Header.jsx"
 import Footer from "./components/Footer.jsx"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Home from "./components/Home/Home"
+import Home from "./components/home/Home"
 import Create from "./components/create/Create"
 import Update from "./components/update/Update"
 import Delete from "./components/delete/Delete"
