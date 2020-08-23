@@ -1,5 +1,5 @@
 import React from 'react'
-import data from "../../data/data"
+import data from "../../../data/data"
 import TableRow from './TableRow';
 
 function Table(){
@@ -19,6 +19,7 @@ function Table(){
                         return (
                             <TableRow
                                 key = {items._id}
+                                _id = {items._id}
                                 title = {items.title}
                                 location = {items.city}
                                 employer = {items.employer} 
