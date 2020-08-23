@@ -33,6 +33,18 @@ function App() {
     )
   }
 
+  function updateJob(updateJob){
+    setJobs(prevJobs =>{
+      return prevJobs.map(jobItem =>{
+        if(jobItem._id !== updateJob._id){
+          return jobItem
+        }else{
+          return updateJob
+        }
+      })
+    })
+  }
+
   return (
     <Router>
       <div>
@@ -53,7 +65,9 @@ function App() {
             data={jobs}
           />} />
 
-          <Route path="/update" component={() => <Update />} />
+          <Route path="/update" component={() => <Update 
+            onUpdate={updateJob}
+          />} />
 
           <Route path="/delete" component={() => <Delete
             onDelete={deleteJob}
