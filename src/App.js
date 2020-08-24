@@ -5,10 +5,10 @@ import Header from "./components/Header.jsx"
 import Footer from "./components/Footer.jsx"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Home from "./components/home/Home"
-import Create from "./components/create/Create"
-import Update from "./components/update/Update"
-import Delete from "./components/delete/Delete"
+import Home from "./components/home/Home.jsx"
+import Create from "./components/create/Create.jsx"
+import Update from "./components/update/Update.jsx"
+import Delete from "./components/delete/Delete.jsx"
 
 import './App.css';
 import data from "./data/data"
